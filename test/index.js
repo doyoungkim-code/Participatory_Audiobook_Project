@@ -11,23 +11,6 @@ let model = [];
 
 // Load the image model and setup the webcam
 async function init() {
-    const modelURL1 = URL1 + "model.json";
-    const metadataURL1 = URL1 + "metadata.json";
-    const modelURL2 = URL2 + "model.json";
-    const metadateURL2 = URL2 + "metadata.json";
-    // load the model and metadata
-    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-    // or files from your local hard drive
-    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-
-    model1 = await tmImage.load(modelURL1, metadataURL1);
-    model2 = await tmImage.load(modelURL2, metadateURL2);
-    maxPredictions = model1.getTotalClasses();
-    maxPredictions = model2.getTotalClasses();
-
-    model[0] = model1;
-    model[1] = model2;
-
     // Convenience function to setup a webcam
     const flip = true; // whether to flip the webcam
     webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
@@ -35,6 +18,7 @@ async function init() {
     await webcam.play();
     //window.requestAnimationFrame(loop);
     setTimeout(function () {
+        initmodel();
         playaudio();
     }, 5000);
     // append elements to the DOM
@@ -43,6 +27,26 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
+}
+
+
+async function initmodel() {
+    // load the model and metadata
+    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+    // or files from your local hard drive
+    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+    const modelURL1 = URL1 + "model.json";
+    const metadataURL1 = URL1 + "metadata.json";
+    const modelURL2 = URL2 + "model.json";
+    const metadateURL2 = URL2 + "metadata.json";
+
+    model1 = await tmImage.load(modelURL1, metadataURL1);
+    model2 = await tmImage.load(modelURL2, metadateURL2);
+    maxPredictions = model1.getTotalClasses();
+    maxPredictions = model2.getTotalClasses();
+
+    model[0] = model1;
+    model[1] = model2;
 }
 
 async function playaudio() {
@@ -86,5 +90,3 @@ async function predict() {
         return (2);
     }
 }
-
-   //시작 -- webcam.setup start --진행 -- /인식필요 구간   loop진입,  
