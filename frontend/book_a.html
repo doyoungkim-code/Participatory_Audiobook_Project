@@ -46,15 +46,19 @@
         <!-- Section-->
         <section class="py-5">
             <div class="container">
-                    <img src="./image/test_image.png" alt="test_image">
-                    <div id="webcam-container"></div>
-                    <div id="label-container"></div>
-                    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-                    <script src="../backend/index.js"></script>
-                    <button class="cam-button" onclick="init()">카메라 시작</button>
+                <div class="content">
+                    <img src="./image/test_image.png" alt="test_image" class="image">
+                    <div class="webcam-wrapper">
+                        <div id="webcam-container"></div>
+                        <div id="label-container"></div>
+                        <button class="cam-button" onclick="init()">카메라 시작</button>
+                    </div>
+                </div>
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+        <script src="../backend/index.js"></script>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
@@ -65,3 +69,27 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+
+<style>
+    .content {
+        display: flex;
+        position: relative;
+    }
+
+    .image {
+        flex-shrink: 0;
+    }
+
+    .webcam-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cam-button {
+        margin-top: 10px;
+    }
+</style>
