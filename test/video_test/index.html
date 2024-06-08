@@ -10,14 +10,36 @@
         <!-- <script src = []></script>
         <script src[0] = "video/video1.MOV"></script> 
         <video id="video1" width="300" height="300" src[0]></video> -->
-        <video id="video1" width="300" height="300" src="video/video1.MOV" style="display: none;"></video>
-        <video id="video2" width="300" height="300" src="video/video2.MOV" style="display: none;"></video>
-
+        <video id="video1" width="300" height="300" src="video/1.MOV" style="display: none;"></video>
+        <video id="video1-1" width="300" height="300" src="video/1-1.MOV" style="display: none;"></video>
+        <video id="video1-2" width="300" height="300" src="video/1-2.MOV" style="display: none;"></video>
+        <video id="video2" width="300" height="300" src="video/2.MOV" style="display: none;"></video>
+        <video id="video2-1" width="300" height="300" src="video/2-1.MOV" style="display: none;"></video>
+        <video id="video2-2" width="300" height="300" src="video/2-2.MOV" style="display: none;"></video>
+        <video id="video3" width="300" height="300" src="video/3.MOV" style="display: none;"></video>
+        <video id="video3-1" width="300" height="300" src="video/3-1.MOV" style="display: none;"></video>
+        <video id="video3-2" width="300" height="300" src="video/3-2.MOV" style="display: none;"></video>
+        <!-- <video id="C1" width="300" height="300" src="video/C1.MOV" style="display: none;"></video>
+        <video id="C2" width="300" height="300" src="video/C2.MOV" style="display: none;"></video>
+        <video id="C3" width="300" height="300" src="video/C3.MOV" style="display: none;"></video> -->
+        <video id="Lex1" width="300" height="300" src="video/Lex1.MOV" style="display: none;"></video>
+        <video id="Lex2" width="300" height="300" src="video/Lex2.MOV" style="display: none;"></video>
+        <video id="Lex3" width="300" height="300" src="video/Lex3.MOV" style="display: none;"></video>
+        <video id="END" width="300" height="300" src="video/END.MOV" style="display: none;"></video>
     </div>
     <div>
         <button onclick="bthPlay()" id="btnPlay">재생</button>
-        <button onclick="bthPause()" id="btnPause">정지</button>
+        <button onclick="playbtn1()" id="btn1" style="display: none;">1번</button>
+        <button onclick="playbtn2()" id="btn2" style="display: none;">2번</button>
+        <button type="button" onclick="init()">Start</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+        <div id="class1" style="display: none;">1번</div>
+        <div id="class2" style="display: none;">2번</div>
+        <div id="class3" style="display: none;">3번</div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
