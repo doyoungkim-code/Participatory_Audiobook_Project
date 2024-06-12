@@ -8,8 +8,10 @@ const videoSelectors = {
 
 const videoElements = {};
 const modelURLs = {
-    model1: 'https://teachablemachine.withgoogle.com/models/22MfqGMGI/',
-    model2: 'https://teachablemachine.withgoogle.com/models/9XJIKg_I8/'
+    // model1: 'https://teachablemachine.withgoogle.com/models/22MfqGMGI/',
+    // model2: 'https://teachablemachine.withgoogle.com/models/9XJIKg_I8/'
+    model1: 'https://teachablemachine.withgoogle.com/models/ZUaQeP4cP/',
+    model2: 'https://teachablemachine.withgoogle.com/models/ZUaQeP4cP/'
 };
 
 let models = [];
@@ -22,6 +24,7 @@ function cacheVideoElements() {
         videoElements[key] = videoSelectors[key].map(selector => document.querySelector(selector));
     });
 }
+
 
 async function initWebcam() {
     const flip = true;
