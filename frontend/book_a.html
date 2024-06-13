@@ -47,6 +47,8 @@
         <section class="py-5">
             <div class="container">
                 <div class="content">
+                    <img id="intro" width="1024" height="768" src="image/test_image.png" style="display: block" usemap="#nextpage"></img>
+                    <map name="nextpage" id="nextpage"><area shape="rect" coords="410,520,614,666" onclick="init()"></map>
                     <video id="video1" width="1024" height="768" src="../backend/video_test/video/1.MOV" style="display: none;"></video>
                     <video id="video1-1" width="1024" height="768" src="../backend/video_test/video/1-1.MOV" style="display: none;"></video>
                     <video id="video1-2" width="1024" height="768" src="../backend/video_test/video/1-2.MOV" style="display: none;"></video>
@@ -64,10 +66,10 @@
                     <video id="Lex3" width="1024" height="768" src="../backend/video_test/video/Lex3.MOV" style="display: none;"></video>
                     <video id="END" width="1024" height="768" src="../backend/video_test/video/END.MOV" style="display: none;"></video>
                     <div class="webcam-wrapper">
-                        <button onclick="bthPlay()" id="btnPlay">재생</button>
+                        <!--<button onclick="bthPlay()" id="btnPlay">재생</button>-->
                         <button onclick="playbtn1()" id="btn1" style="display: none;">1번</button>
                         <button onclick="playbtn2()" id="btn2" style="display: none;">2번</button>
-                        <button type="button" onclick="init()">Start</button>
+                        <!--<button type="button" onclick="init()">Start</button>-->
                         <div id="webcam-container"></div>
                         <div id="label-container"></div>
                         <div id="class1" style="display: none;">1번</div>

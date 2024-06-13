@@ -36,6 +36,7 @@ async function init() {
     const flip = true; 
     webcam = new tmImage.Webcam(200, 200, flip);
     await webcam.setup();
+    document.getElementById("intro").style.display = "none";
     await webcam.play();
     //window.requestAnimationFrame(loop);
     initmodel();
