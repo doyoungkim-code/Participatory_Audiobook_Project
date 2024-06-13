@@ -7,4 +7,5 @@
 **240611** / **[backend]** AI 프레임워크 미디어파이프 사용. 신체부위를 나타내는 각 랜드마크 존재여부를 통해 사용자가 오디오 북 서비스에 참여할 수 있도록 신체가 나오게 하는 것에 활용할 수 있을 것 같습니다. <br>
 **240612** / **[backend]** Separate functions, modify video file to fit story (remove 3-1.MOV, 3-2.MOV and add 3-0.MOV), and add EPIL.MOV <br>
 **240612** / **[backend]** test_mediapipe 폴더 추가(기존 js + mediapipe 코드) <br>
+**240613** / **[frontend]** intro image mapping for next page + mapping area : (410, 520, 614, 666) <br>
 
