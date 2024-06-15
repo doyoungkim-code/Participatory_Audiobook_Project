@@ -8,4 +8,4 @@
 **240612** / **[backend]** Separate functions, modify video file to fit story (remove 3-1.MOV, 3-2.MOV and add 3-0.MOV), and add EPIL.MOV <br>
 **240612** / **[backend]** test_mediapipe 폴더 추가(기존 js + mediapipe 코드) <br>
 **240613** / **[frontend]** intro image mapping for next page + mapping area : (410, 520, 614, 666) <br>
-
+**240615** / **[book]** book 폴더 추가, 풍선 포포의 여행 내용 및 이미지 추가 <br>
