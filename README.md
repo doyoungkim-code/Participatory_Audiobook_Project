@@ -10,3 +10,4 @@
 **240613** / **[frontend]** intro image mapping for next page + mapping area : (410, 520, 614, 666) <br>
 **240615** / **[book]** book 폴더 추가, 풍선 포포의 여행 내용 및 이미지 추가 <br>
 **240615** / **[frontend]** modified book1 image <br>
+**240616** / **[frontend]** thumbnail image completed (book1 ~ book4 : example image, book5 ~ book8 : default image) <br>
