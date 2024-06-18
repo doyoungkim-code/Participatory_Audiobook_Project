@@ -9,12 +9,12 @@ let runningMode = "VIDEO";
 let checking = false;
 let lastVideoTime = -1;
 let temp = 0;
-const videoHeight = "300px";
-const videoWidth = "300px";
+const videoHeight = "250px";
+const videoWidth = "250px";
 
 const videoSelectors = {
     main: ['#video1', '#video2', '#video3'],
-    choice: ['#video1-1', '#video1-2', '#video2-1', '#video2-2', '#video3-0'],
+    choice: ['#video1-1', '#video1-2', '#video2-1', '#video2-2', '#video4'],
     exp: ['#Lex1', '#Lex2', '#Lex3'],
     end: ['#END'],
     epil: ['#EPIL']
@@ -93,7 +93,7 @@ async function predict(currentIndex) {
     // 아니면 0.50 이상으로 해도 될 듯 (하지만 그러면 class3이 애매해짐)
     if (maxProbability >= 0.9) {
         // ['class1', 'class2', 'class3'].forEach((id, idx) => {
-        //     document.getElementById(id).style.display = maxProbabilityIndex === idx ? "flex" : "none";
+        //     document.getElementById(id).style. = maxProbabilityIndex === idx ? "flex" : "none";
         // });
         // 0번 인덱스가 1이면 1, 1번 인덱스가 1이면 2
         return maxProbabilityIndex + 1;
@@ -113,7 +113,6 @@ async function playVideo(videoType, index) {
     // block
     video.style.display = 'flex';
     video.play();
-    // pausefnc();
     if (videoType == 'epil') {
         await new Promise(resolve => {
         epilogueVideo.onended = () => {
@@ -194,10 +193,6 @@ async function playEndVideo() {
     epilogueVideo.pause();
 }
 
-document.querySelectorAll('.VIDEO').forEach(element => {
-    element.addEventListener('click', pausefnc);
-});
-
 async function pausefnc(){
     if (!videoElements[TYPE][INDEX].paused)
         await videoElements[TYPE][INDEX].pause();
@@ -205,12 +200,16 @@ async function pausefnc(){
         await videoElements[TYPE][INDEX].play();
 }
 
+document.querySelectorAll('.VIDEO').forEach(element => {
+    element.addEventListener('click', pausefnc);
+});
+
 async function init() {
     cacheVideoElements();
     await initModels(); 
 
     document.getElementById("startButton").style.display = "none";
-    document.getElementById("intro").style.display = "none";
+    
     const constraints = {
         video: true
     };
@@ -236,6 +235,7 @@ async function checkingfunc() {
 		test = await predictWebcam();
 	}
     await sleep(1);
+    document.getElementById("intro").style.display = "none";
     playallVideo();
 }
 
