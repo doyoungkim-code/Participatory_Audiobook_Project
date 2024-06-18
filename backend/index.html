@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Video Selector</title>
+    
+</head>
+<body>
+    <div class="VIDEO" width="300" height="300">
+        <video id="video1" width="300" height="300" src="video/1.MOV" style="display: none;"></video>
+        <video id="video1-1" width="300" height="300" src="video/1-1.MOV" style="display: none;"></video>
+        <video id="video1-2" width="300" height="300" src="video/1-2.MOV" style="display: none;"></video>
+        <video id="video2" width="300" height="300" src="video/2.MOV" style="display: none;"></video>
+        <video id="video2-1" width="300" height="300" src="video/2-1.MOV" style="display: none;"></video>
+        <video id="video2-2" width="300" height="300" src="video/2-2.MOV" style="display: none;"></video>
+        <video id="video3" width="300" height="300" src="video/3.MOV" style="display: none;"></video>
+        <video id="video3-0" width="300" height="300" src="video/3-0.MOV" style="display: none;"></video>
+        <video id="Lex1" width="300" height="300" src="video/Lex1.MOV" style="display: none;"></video>
+        <video id="Lex2" width="300" height="300" src="video/Lex2.MOV" style="display: none;"></video>
+        <video id="Lex3" width="300" height="300" src="video/Lex3.MOV" style="display: none;"></video>
+        <video id="END" width="300" height="300" src="video/END.MOV" style="display: none;"></video>
+        <video id="EPIL" width="500" height="500" src="video/EPIL.MOV"style="display: none;"></video>
+    </div>
+    <div>
+        <button id="startButton">Start</button>
+        <div style="position: relative;">
+            <video id="webcam" style="width: 300px; height: 300px; position: abso" autoplay playsinline></video>
+            <canvas id="canvas" width="300" height="300" style="position: absolute; left: 0px; top: 0px;"></canvas>
+        </div>
+    </div>
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
+</html>
