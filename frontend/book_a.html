@@ -49,7 +49,7 @@
                 <div class="content">
                     <img id="intro" width="1024" height="585" src="image/intro_image_book1.png" style="display: block" usemap="#nextpage"></img>
                     <map name="nextpage" id="nextpage"><area id="startButton" coords="836,373,963,485"></map>
-                    <div class="VIDEO" width="1024" height="585"></div>
+                    <div class="VIDEO" width="1024" height="585">
                         <video id="video1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1.mov" style="display: none;"></video>
                         <video id="video1-1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-1.mov" style="display: none;"></video>
                         <video id="video1-2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-2.mov" style="display: none;"></video>
@@ -59,18 +59,21 @@
                         <video id="video3" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.3.mov" style="display: none;"></video>
                         <video id="video4" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.4.mov" style="display: none;"></video>
                         <video id="END" width="1024" height="585" src="../book/솜뭉치_하루의_모험/ending.mov" style="display: none;"></video>
-                        <video id="Lex1" width="1024" height="585" src="../backend/video_test/video/Lex1.MOV" style="display: none;"></video>
-                        <video id="Lex2" width="1024" height="585" src="../backend/video_test/video/Lex2.MOV" style="display: none;"></video>
-                        <video id="Lex3" width="1024" height="585" src="../backend/video_test/video/Lex3.MOV" style="display: none;"></video>
-                    </div>
-                    <div style="position: relative;">
-                        <video id="webcam" style="width: 300px; height: 300px; position: abso" autoplay playsinline></video>
-                        <canvas id="canvas" width="300" height="300" style="position: absolute; left: 0px; top: 0px;"></canvas>
+                        <video id="EPIL" width="1024" height="585" src="../book/솜뭉치_하루의_모험/EPIL.MOV" style="display: none;"></video>
+                        <video id="Lex1" width="1024" height="585" src="../backend/video/Lex1.MOV" style="display: none;"></video>
+                        <video id="Lex2" width="1024" height="585" src="../backend/video/Lex2.MOV" style="display: none;"></video>
+                        <video id="Lex3" width="1024" height="585" src="../backend/video/Lex3.MOV" style="display: none;"></video>
+                        <div class="webcam-wrapper">
+                            <video id="webcam" style="width: 250px; height: 250px;" autoplay playsinline></video>
+                            <canvas id="canvas" width="250" height="250"></canvas>
+                        </div>
                     </div>
                     </div>
                 </div>
             </div>
         </section>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
         <script type="module" src="../backend/index.js"></script>
@@ -95,8 +98,8 @@
 
     .webcam-wrapper {
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: 20px;
+        bottom: -277px;
         display: flex;
         flex-direction: column;
         align-items: center;
