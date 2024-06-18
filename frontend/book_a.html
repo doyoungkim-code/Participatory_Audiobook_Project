@@ -48,36 +48,32 @@
             <div class="container">
                 <div class="content">
                     <img id="intro" width="1024" height="585" src="image/intro_image_book1.png" style="display: block" usemap="#nextpage"></img>
-                    <map name="nextpage" id="nextpage"><area shape="rect" coords="836,373,963,485" onclick="init()"></map>
-                    <video id="video1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1.mov" style="display: none;"></video>
-                    <video id="video1-1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-1.mov" style="display: none;"></video>
-                    <video id="video1-2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-2.mov" style="display: none;"></video>
-                    <video id="video2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2.mov" style="display: none;"></video>
-                    <video id="video2-1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2-1.mov" style="display: none;"></video>
-                    <video id="video2-2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2-2.mov" style="display: none;"></video>
-                    <video id="video3" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.3.mov" style="display: none;"></video>
-                    <video id="video4" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.4.mov" style="display: none;"></video>
-                    <video id="END" width="1024" height="585" src="../book/솜뭉치_하루의_모험/ending.mov" style="display: none;"></video>
-                    <video id="Lex1" width="1024" height="585" src="../backend/video_test/video/Lex1.MOV" style="display: none;"></video>
-                    <video id="Lex2" width="1024" height="585" src="../backend/video_test/video/Lex2.MOV" style="display: none;"></video>
-                    <video id="Lex3" width="1024" height="585" src="../backend/video_test/video/Lex3.MOV" style="display: none;"></video>
-                    <div class="webcam-wrapper">
-                        <!--<button onclick="bthPlay()" id="btnPlay">재생</button>-->
-                        <button onclick="playbtn1()" id="btn1" style="display: none;">1번</button>
-                        <button onclick="playbtn2()" id="btn2" style="display: none;">2번</button>
-                        <!--<button type="button" onclick="init()">Start</button>-->
-                        <div id="webcam-container"></div>
-                        <div id="label-container"></div>
-                        <div id="class1" style="display: none;">1번</div>
-                        <div id="class2" style="display: none;">2번</div>
-                        <div id="class3" style="display: none;">3번</div>
+                    <map name="nextpage" id="nextpage"><area id="startButton" coords="836,373,963,485"></map>
+                    <div class="VIDEO" width="1024" height="585"></div>
+                        <video id="video1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1.mov" style="display: none;"></video>
+                        <video id="video1-1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-1.mov" style="display: none;"></video>
+                        <video id="video1-2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.1-2.mov" style="display: none;"></video>
+                        <video id="video2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2.mov" style="display: none;"></video>
+                        <video id="video2-1" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2-1.mov" style="display: none;"></video>
+                        <video id="video2-2" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.2-2.mov" style="display: none;"></video>
+                        <video id="video3" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.3.mov" style="display: none;"></video>
+                        <video id="video4" width="1024" height="585" src="../book/솜뭉치_하루의_모험/Scene.4.mov" style="display: none;"></video>
+                        <video id="END" width="1024" height="585" src="../book/솜뭉치_하루의_모험/ending.mov" style="display: none;"></video>
+                        <video id="Lex1" width="1024" height="585" src="../backend/video_test/video/Lex1.MOV" style="display: none;"></video>
+                        <video id="Lex2" width="1024" height="585" src="../backend/video_test/video/Lex2.MOV" style="display: none;"></video>
+                        <video id="Lex3" width="1024" height="585" src="../backend/video_test/video/Lex3.MOV" style="display: none;"></video>
+                    </div>
+                    <div style="position: relative;">
+                        <video id="webcam" style="width: 300px; height: 300px; position: abso" autoplay playsinline></video>
+                        <canvas id="canvas" width="300" height="300" style="position: absolute; left: 0px; top: 0px;"></canvas>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-        <script src="../backend/video_test/index.js"></script>
+        <script type="module" src="../backend/index.js"></script>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
