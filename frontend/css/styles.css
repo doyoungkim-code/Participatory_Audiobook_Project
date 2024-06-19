@@ -10824,3 +10824,24 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.search {
+  position: relative;
+  width: 1230px;
+}
+
+input {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px 12px;
+  font-size: 20px;
+}
+
+.imgsearch {
+  position : absolute;
+  width: 34px;
+  top: 10px;
+  right: 24px;
+  margin: 0;
+}
