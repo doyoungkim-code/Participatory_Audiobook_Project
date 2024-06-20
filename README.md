@@ -15,3 +15,4 @@
 **240618** / **[frontend]** added frontend/image/logo folder & added EXTORY logo <br>
 **240619** / **[frontend]** added search bar <br>
 **240620** / **[backend]** 이야기 시작 전 웹캠에 사람이 잡히지 않는 경우, 안내멘트가 출력되도록 backend/index.js의 checkingfunc()와 book_a.html에 waringAudio, readyAudio추가, 해당 오디오는 임시로 하루 1-1, 1-2영상 사용, 웹캠 좌우반전<br>
+**240620** / **[frontend]** css file reducing<br>
