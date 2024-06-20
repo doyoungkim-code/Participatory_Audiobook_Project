@@ -231,23 +231,24 @@ function sleep(sec) {
 let test = 0;
 async function checkingfunc() {
     // 밑의 오디오는 이야기 시작 전 웹캠에 사람이 잡히지 않는 경우 출력되는 안내멘트입니다.
+    // 사람이 잡히게 되면 warningAudio가 종료되고 readyAudio가 재생되고 readyAudio가 끝나면 이야기가 시작됩니다.
     // 아직 안내멘트 오디오가 없어서 일단은 일단은 솜뭉치 하루 오디오를 넣어둔 상태입니다.
     const warningAudio = document.getElementById('warningAudio');
+    const readyAudio = document.getElementById('readyAudio');
     while (test === 0){
         test = await predictWebcam();
-        if (test === 1)
+        if (test === 1){
+            warningAudio.pause();
+            readyAudio.play();
+            while (!(readyAudio.paused))
+                await sleep(2);
             break;
-        warningAudio.play(); // 웹캠에 사람이 잡히지 않았기에 안내멘트 출력
-        await sleep(30); // 일단은 대충 오디오 길이만큼 슬립함수 사용. 이걸 안 하면 바로 while을 다시 돌기 때문에 사람이 잡히는 경우 안내멘트가 짤림.
-
-        // 원래는 아래와 같이 하려고 했으나 예상대로 작동하지 않아서 일단은 주석 처리...
-        // while (!(warningAudio.paused))
-        //     sleep(2);
+        }
+        await warningAudio.play(); // 웹캠에 사람이 잡히지 않았기에 안내멘트 출력
+        await sleep(1);
     }
-    warningAudio.pause(); // if (test === 1)에 걸려서 while을 벗어났으니 일시정지. 위의 안내멘트를 끝까지 듣기 위해 sleep을 줄거라면 얘는 빼도 될듯합니다?
-    await sleep(1);
     document.getElementById("intro").style.display = "none";
-    playallVideo();
+    await playallVideo();
 }
 
 const canvasElement = document.getElementById("canvas");
