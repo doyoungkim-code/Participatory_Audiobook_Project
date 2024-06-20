@@ -16,3 +16,6 @@
 **240619** / **[frontend]** added search bar <br>
 **240620** / **[backend]** 이야기 시작 전 웹캠에 사람이 잡히지 않는 경우, 안내멘트가 출력되도록 backend/index.js의 checkingfunc()와 book_a.html에 waringAudio, readyAudio추가, 해당 오디오는 임시로 하루 1-1, 1-2영상 사용, 웹캠 좌우반전<br>
 **240620** / **[frontend]** css file reducing<br>
+**240620** / **[frontend]** Added play/pause (▶/❚❚) and speed control buttons (X0.5, X0.8, X1.0, X1.2, X1.5) <br>
+**240620** / **[backend]** Implemented play/pause and speed control functionality <br>
+**240620** 240620 / Added .gitignore <br>
