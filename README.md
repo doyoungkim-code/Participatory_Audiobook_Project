@@ -18,4 +18,4 @@
 **240620** / **[frontend]** css file reducing<br>
 **240620** / **[frontend]** Added play/pause (▶/❚❚) and speed control buttons (X0.5, X0.8, X1.0, X1.2, X1.5) <br>
 **240620** / **[backend]** Implemented play/pause and speed control functionality <br>
-**240620** 240620 / Added .gitignore <br>
+**240620** / Added .gitignore <br>
