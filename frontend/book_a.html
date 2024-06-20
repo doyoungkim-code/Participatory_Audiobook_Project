@@ -68,14 +68,25 @@
                             <video id="webcam" style="width: 250px; height: 250px;" autoplay playsinline></video>
                             <canvas id="canvas" width="250" height="250"></canvas>
                         </div>
-                    </div>
+                        <!-- Start&Pause 그리고 Speed Control Buttons -->
+                        <div id="buttonContainer" class="player_controls" style="display: none;">  
+                            <button id="player_button" class="player_button">▶/&#10074;&#10074;</button>
+                            <button class="player_button speed" data-speed="0.5">X0.5</button>
+                            <button class="player_button speed" data-speed="0.8">X0.8</button>
+                            <button class="player_button speed" data-speed="1.0">X1.0</button>
+                            <button class="player_button speed" data-speed="1.2">X1.2</button>
+                            <button class="player_button speed" data-speed="1.5">X1.5</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- 밑에 오디오는 이야기 시작 전 웹캠에 사람이 잡히지 않는 경우 출력되는 안내멘트입니다. -->
             <!-- 지금은 예시로 하루의 모험 음성을 사용했음 -->
-            <audio src="../book/솜뭉치_하루의_모험/Scene.1-1.mov" id="warningAudio"></audio>
-            <audio src="../book/솜뭉치_하루의_모험/Scene.1-2.mov" id="readyAudio"></audio>
+            <!--audio src="../book/솜뭉치_하루의_모험/Scene.1-1.mov" id="warningAudio"></audio-->
+            <!--audio src="../book/솜뭉치_하루의_모험/Scene.1-2.mov" id="readyAudio"></audio-->
+            <!--넘어가는 거 느려서 잠시-->
+            <audio src="../test/video_test/video/1.MOV" id="warningAudio"></audio>
+            <audio src="../test/video_test/video/2.MOV" id="readyAudio"></audio>
         </section>
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>

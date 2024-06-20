@@ -56,9 +56,27 @@ const createPoseLandmarker = async () => {
 
 createPoseLandmarker();
 
+// 현재 실행 중인 비디오를 currentVideo로 설정
+let currentVideo = null;
+// 초기 속도는 1.0으로 설정
+let selectedSpeed = 1.0; 
+
 function cacheVideoElements() {
     Object.keys(videoSelectors).forEach(key => {
-        videoElements[key] = videoSelectors[key].map(selector => document.querySelector(selector));
+        videoElements[key] = videoSelectors[key].map(selector => {
+            const videoElement = document.querySelector(selector);
+            videoElement.addEventListener('play', () => {
+                currentVideo = videoElement;
+                currentVideo.playbackRate = selectedSpeed; 
+            });
+            // pause되면 null되어서 일시정지 시 문제가 발생했었음.
+            // videoElement.addEventListener('pause', () => {
+            //     if (currentVideo === videoElement) {
+            //         currentVideo = null;
+            //     }
+            // });
+            return videoElement;
+        });
     });
 }
 
@@ -138,6 +156,10 @@ async function playVideo(videoType, index) {
 
 
 async function playallVideo() {
+    // 속도 관련 buttonContainer 생성
+    createSpeedButton();
+    // 재생/일시정지 버튼 이벤트 리스너 등록 함수
+    addPlayerButtonEventListener();
     // main 비디오 실행
     await playVideo('main', currentIndex);
     // await webcam.play();
@@ -193,22 +215,55 @@ async function playEndVideo() {
     epilogueVideo.pause();
 }
 
-async function pausefnc(){
-    if (!videoElements[TYPE][INDEX].paused)
-        await videoElements[TYPE][INDEX].pause();
-    else
-        await videoElements[TYPE][INDEX].play();
+// async function pausefnc(){
+//     if (!videoElements[TYPE][INDEX].paused)
+//         await videoElements[TYPE][INDEX].pause();
+//     else
+//         await videoElements[TYPE][INDEX].play();
+// }
+
+// document.querySelectorAll('.VIDEO').forEach(element => {
+//     element.addEventListener('click', pausefnc);
+// });
+
+let isPlayerButtonEventListenerAdded = false;
+
+// 재생/일시정지 버튼 이벤트 리스너 등록
+function addPlayerButtonEventListener() {
+    // 무엇 때문인지 모르겠는데 두번씩 눌려서 이렇게 처리
+    if (isPlayerButtonEventListenerAdded) return;
+
+    const playerButton = document.getElementById('player_button');
+    if (playerButton) {
+        playerButton.addEventListener('click', async () => {
+            console.log("Player button clicked");
+            await pausefnc();
+        });
+        isPlayerButtonEventListenerAdded = true;
+    }
 }
 
-document.querySelectorAll('.VIDEO').forEach(element => {
-    element.addEventListener('click', pausefnc);
-});
+// 비디오 일시정지 및 재생 함수
+async function pausefnc() {
+    if (currentVideo) {
+        if (!currentVideo.paused) {
+            console.log("currentVideo is paused");
+            await currentVideo.pause();
+        } else {
+            console.log("currentVideo is played");
+            await currentVideo.play();
+        }
+    } 
+    // pausefnc 오류 확인용 log
+    else {
+        console.log("currentVideo is 0");
+    }
+}
 
 async function init() {
     cacheVideoElements();
     await initModels(); 
-
-    document.getElementById("startButton").style.display = "none";
+    //document.getElementById("startButton").style.display = "none";
     
     const constraints = {
         video: true
@@ -222,6 +277,23 @@ async function init() {
             checkingfunc()
         }); */
         webcam.addEventListener("loadeddata", checkingfunc);
+    });
+}
+
+function createSpeedButton() {
+    // 속도 버튼을 표시하는 로직
+    const buttonContainer = document.getElementById('buttonContainer');
+    buttonContainer.style.display = 'flex';
+    const speedButtons = document.querySelectorAll('.speed');
+
+    speedButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const speed = parseFloat(button.dataset.speed);
+            selectedSpeed = speed; 
+            if (currentVideo) {
+                currentVideo.playbackRate = speed;
+            }
+        });
     });
 }
 
